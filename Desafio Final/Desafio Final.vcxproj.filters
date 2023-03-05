@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="View">
+      <UniqueIdentifier>{020c8819-4299-46bb-8d3c-92a4bfa5b2ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vendedor">
+      <UniqueIdentifier>{e1b4d687-b565-4c61-8788-d7d2fdba8939}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{af256190-f9c7-4116-b948-a5737648eb6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tienda">
+      <UniqueIdentifier>{b6b29cc9-6513-4fe9-8528-ad50974383be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tienda\Presentador">
+      <UniqueIdentifier>{89669b0d-67f3-47ed-9a24-fc130bda7bb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cotizacion">
+      <UniqueIdentifier>{a32bc1d1-0a74-41dc-91cb-864e40276d27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="menu.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="vendedor.cpp">
+      <Filter>Vendedor</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Tienda.cpp">
+      <Filter>Tienda\Presentador</Filter>
+    </ClCompile>
+    <ClCompile Include="Cotizacion.cpp">
+      <Filter>Cotizacion</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="menu.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="vendedor.h">
+      <Filter>Vendedor</Filter>
+    </ClInclude>
+    <ClInclude Include="Tienda.h">
+      <Filter>Tienda\Presentador</Filter>
+    </ClInclude>
+    <ClInclude Include="Cotizacion.h">
+      <Filter>Cotizacion</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
