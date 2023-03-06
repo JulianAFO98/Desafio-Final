@@ -85,6 +85,7 @@ void Tienda::BorrarCantidad(int x,int &p1 ) {
 void Tienda::EmpezarCotizacionCamisa(int x, int z) {
 	int cant;
 	int *product=nullptr;
+	int comprobante = 0;
 	string Nproduct;
 	if (x != 0) {
 		IngresarPrecioUnitario();
@@ -167,14 +168,17 @@ void Tienda::EmpezarCotizacionCamisa(int x, int z) {
 
 			}
 		}
-		ComprobarCantidad(cant,* product);
-		BorrarCantidad(cant, *product);
-		CrearCotizacion(cant, *product,Nproduct,z,precioUnitario);
+		ComprobarCantidad(cant, *product, comprobante);
+		if (comprobante != 0) {
+			CrearCotizacion(cant, *product, Nproduct, z, precioUnitario);
+			BorrarCantidad(cant, *product);
+		}
 	}
 }
 void Tienda::EmpezarCotizacionPant(int x, int z) {
 	int cant;
 	int* product = nullptr;
+	int comprobante = 0;
 	string Nproduct;
 	if (x != 0) {
 		IngresarPrecioUnitario();
@@ -182,21 +186,25 @@ void Tienda::EmpezarCotizacionPant(int x, int z) {
 	if (x == 1) {
 		precioUnitario = (precioUnitario*0.88)*1.30;
 		product = &PantChupinPre;
+		Nproduct = "Pantalon Chupin Premium";
 	}
 	else {
 		if (x == 2) {
 			precioUnitario = (precioUnitario * 0.88);
 			product = &PantChupinCas;
+			Nproduct = "Pantalon Chupin Casual";
 		}
 		else {
 			if (x == 3) {
 				precioUnitario = precioUnitario * 1.30;
 				product = &PantNormPre;
+				Nproduct = "Pantalon Normal Premium";
 			}
 			else {
 				if (x == 4) {
 					precioUnitario = precioUnitario;
 					product = &PantNormCas;
+					Nproduct = "Pantalon Normal Casual";
 				}
 			}
 		}
@@ -221,23 +229,28 @@ void Tienda::EmpezarCotizacionPant(int x, int z) {
 
 			}
 		}
-		ComprobarCantidad(cant, *product);
-		CrearCotizacion(cant, *product, Nproduct, z,precioUnitario);
-		BorrarCantidad(cant,*product);
+		ComprobarCantidad(cant, *product,comprobante);
+		if (comprobante!=0){
+			CrearCotizacion(cant, *product, Nproduct, z, precioUnitario);
+			BorrarCantidad(cant, *product);
+		}
+		
 	}
 }
-void Tienda::ComprobarCantidad(int cant,int product) {
+void Tienda::ComprobarCantidad(int cant,int product,int& Comprob) {
 	if (cant > product) {
 		cout << "---------------------------------------------------" << "\n";
 		cout << "La cantidad solicitada sobrepasa a las disponibles en stock" << "\n";
 		cout << "---------------------------------------------------" << "\n";
 		cout << "--------------Presione enter para continuar---------------" << "\n";
+		Comprob = 0;
 	}
 	else {
 		cout << "---------------------------------------------------" << "\n";
 		cout << "Se puede realizar la transaccion" << "\n";
 		cout << "---------------------------------------------------" << "\n";
 		cout << "--------------Presione enter para continuar---------------" << "\n";
+		Comprob = 1;
 	}
 	cin.get();
 	cin.get();
