@@ -85,8 +85,8 @@ void Tienda::BorrarCantidad(int x,int &p1 ) {
 void Tienda::EmpezarCotizacionCamisa(int x, int z) {
 	int cant;
 	int *product=nullptr;
-	int comprobante = 0;
 	string Nproduct;
+	int comprobante = 0;
 	if (x != 0) {
 		IngresarPrecioUnitario();
 	}
@@ -178,8 +178,8 @@ void Tienda::EmpezarCotizacionCamisa(int x, int z) {
 void Tienda::EmpezarCotizacionPant(int x, int z) {
 	int cant;
 	int* product = nullptr;
-	int comprobante = 0;
 	string Nproduct;
+	int comprobante = 0;
 	if (x != 0) {
 		IngresarPrecioUnitario();
 	}
@@ -229,12 +229,11 @@ void Tienda::EmpezarCotizacionPant(int x, int z) {
 
 			}
 		}
-		ComprobarCantidad(cant, *product,comprobante);
-		if (comprobante!=0){
+		ComprobarCantidad(cant, *product, comprobante);
+		if (comprobante != 0) {
 			CrearCotizacion(cant, *product, Nproduct, z, precioUnitario);
 			BorrarCantidad(cant, *product);
 		}
-		
 	}
 }
 void Tienda::ComprobarCantidad(int cant,int product,int& Comprob) {

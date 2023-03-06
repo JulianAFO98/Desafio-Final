@@ -30,7 +30,7 @@ public:
 	void EmpezarCotizacionPant(int x, int z);
 	void EmpezarCotizacionCamisa(int x,int z);
 	void CrearCotizacion(int cant, int product,string a, int z,float u);
-	void ComprobarCantidad(int cant,int product,int&Comprob);
+	void ComprobarCantidad(int cant,int product,int &comprob);
 	void imprimirHistorial();
 	void IngresarPrecioUnitario();
 	void BorrarCantidad(int x, int& p1);
